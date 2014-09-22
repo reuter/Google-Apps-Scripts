@@ -1,0 +1,39 @@
+<style>
+  div.title{
+    font-weight:bold;
+  }
+  
+  section{
+    margin: 15px 5px;
+  }
+</style>
+
+<script>  
+  function newPass(password){
+    var div = document.getElementById('output');
+    div.innerHTML = "New Password is : " + password;
+  }
+</script>
+<section>
+<div class="title">Supervisor Password</div>
+<form id="myForm">
+  Password Length : <input name="length" type="text" value=8 /><br>
+  <input type="button" value="Generate Password"
+      onclick="google.script.run
+          .withSuccessHandler(newPass)
+          .generatePass(document.forms[0])" />
+</form>
+</section>
+<section>
+<div class="title">Oracle Password</div>
+<form id="myOracleForm">
+  Password Length : <input name="length" type="text" value=8 /><br>
+  <input type="button" value="Generate Password"
+      onclick="google.script.run
+          .withSuccessHandler(newPass)
+          .generateOraclePass(document.forms[1])" />
+</form>
+</section>
+<section>
+<div id="output"></div>
+</section>
